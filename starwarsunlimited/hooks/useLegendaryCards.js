@@ -1,4 +1,3 @@
-
 // hooks/useLegendaryCards.js
 import useSWR from 'swr';
 import fetcher from '../utils/fetcher';
@@ -9,7 +8,7 @@ export default function useLegendaryCards() {
     console.log(data);
 
   // Filter for legendary cards by rarity type "L"
-  const legendaryCards = data?.data?.filter(card => card.Rarity === 'L') || [];
+  const legendaryCards = data?.data?.filter(card => card.Rarity === 'Legendary') || [];
   return {
     cards: legendaryCards,
     isLoading: !error && !data,
