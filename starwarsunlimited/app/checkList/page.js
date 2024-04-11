@@ -21,6 +21,7 @@ function CardsList() {
   const [checkedState, setCheckedState] = useState(() => getInitialValue('checkedState', {}));
 
   useEffect(() => {
+    console.log(cards);
     localStorage.setItem('counts', JSON.stringify(counts));
     localStorage.setItem('checkedState', JSON.stringify(checkedState));
   }, [counts, checkedState]);
@@ -59,7 +60,7 @@ function CardsList() {
         Legendarys
       </h1>
 
-      {cards.slice(0, 10).map(card => (
+      {cards.map(card => (
         <CardComponent
           key={card.Number}
           card={card}
